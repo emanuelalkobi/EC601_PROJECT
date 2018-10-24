@@ -26,8 +26,9 @@ Sprint4(11/11 - 12/13): Combine the whole code together and track all the necess
 
 
 ------------------------------------------------------------------------------------------
+*Player Detection*
 
-track_game.py is based on:
+track_game.py is for detecting the players. It is based on:
 
             https://towardsdatascience.com/analyse-a-soccer-game-using-tensorflow-object-detection-and-opencv-e321c230e8f2
             
