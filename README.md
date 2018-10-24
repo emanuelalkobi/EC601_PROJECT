@@ -28,15 +28,16 @@ Sprint4(11/11 - 12/13): Combine the whole code together and track all the necess
 ------------------------------------------------------------------------------------------
 *Player Detection*
 
-track_game.py is for detecting the players. It is based on:
+track_game.py is for detecting the players. It is based on a similar project:
 
             https://towardsdatascience.com/analyse-a-soccer-game-using-tensorflow-object-detection-and-opencv-e321c230e8f2
             
-we are trcking only persons and soccer ball objects and then use opencv to identify between 2 teams.
+The "SSD_mobilenet_COCO" model is used, which is in the object_detection object.
+Type the following to run it:
+     
+     python3 track_game.py
 
-track_game is using soccer_small.mp4 video.
-
-in order to run download all the repository and run track_game.py. 
+It will run with soccer_small.mp4
 
 ------------------------------------------------------------------------------------------
 At soccer ball classifier there are 3 different classifiers for detecting a soccer ball.
