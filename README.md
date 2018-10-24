@@ -53,3 +53,6 @@ At soccer ball classifier there are 3 different classifiers for detecting a socc
       2.track_video.py <video path>
       
       the output of both algorithms is a new video/image with a result after their name with the output of the algorithm
+      
+      based on:
+      https://towardsdatascience.com/yolov2-to-detect-your-own-objects-soccer-ball-using-darkflow-a4f98d5ce5bf
