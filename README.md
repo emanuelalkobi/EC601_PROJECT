@@ -23,6 +23,7 @@ Sprint3(10/07 - 11/10): build a classifier for a soccer ball.combine to get the 
 Sprint4(11/11 - 12/13): run the whole code together and track all the necessary parts.write the algorith to detect the offside based on the detections.
 
 
+------------------------------------------------------------------------------------------
 
 track_game.py is based on:
 
@@ -33,5 +34,8 @@ we are trcking only persons and soccer ball objects and then use opencv to ident
 track_game is using soccer_small.mp4 video.
 
 in order to run download all the repository and run track_game.py. 
+
+------------------------------------------------------------------------------------------
+At soccer ball classifier there are 3 different classifiers for detecting a soccer ball.
 
 
