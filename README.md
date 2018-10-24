@@ -1,20 +1,20 @@
 # EC601_PROJECT
 Soccer Offside Detection
-Product Name: 
+**Product Name:** 
 
      Soccer Offside Detection System
      
-Mission Definition:
+**Mission Definition:**
 
      Automatically detecting offside from game videos with visual based tools
      
-Target Customer: 
+**Target Customer: **
 
      Soccer referees or football associations
      
 
 ------------------------------------------------------------------------------------------
-Timeline
+**Timeline**
 
 Sprint2(9/26 - 10/06): review and investigate background ,look for algorithms for tracking.
 
@@ -24,7 +24,7 @@ Sprint4(11/11 - 12/13): run the whole code together and track all the necessary 
 
 
 ------------------------------------------------------------------------------------------
-
+**track players**
 track_game.py is based on:
 
             https://towardsdatascience.com/analyse-a-soccer-game-using-tensorflow-object-detection-and-opencv-e321c230e8f2
