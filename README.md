@@ -1,4 +1,11 @@
 # EC601_PROJECT
+Soccer Offside Detection
+Product Name: 
+     Soccer Offside Detection System
+Mission Definition:
+     Automatically detecting offside from game videos with visual based tools
+Target Customer: 
+     Soccer referees or football associations
 
 ------------------------------------------------------------------------------------------
 track_game.py is based on:
