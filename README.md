@@ -38,4 +38,15 @@ in order to run download all the repository and run track_game.py.
 ------------------------------------------------------------------------------------------
 At soccer ball classifier there are 3 different classifiers for detecting a soccer ball.
 
+#yolo
+
+This classifier use the yolo and darkflow algorith in order to detect items in a image.
+We train it in order to detect soccer balls at images and videos.
+there are 2 files:
+
+     1.track_image.py <image path>
+     2.track_video.py <video path>
+     
+     the output of both algorithms is a new video/image with a result after their name with the output of the algorithm
+
 
