@@ -31,6 +31,10 @@ PATH_TO_CKPT = os.path.join(CWD_PATH, 'object_detection', MODEL_NAME, 'frozen_in
 PATH_TO_LABELS = os.path.join(CWD_PATH, 'object_detection', 'data', 'mscoco_label_map.pbtxt')
 
 
+#check if vide to analyze exsist
+filename= get_info.get_video_file(sys.argv[1])
+
+
 detection_graph = tf.Graph()
 with detection_graph.as_default():
   od_graph_def = tf.GraphDef()
@@ -58,7 +62,6 @@ print("Team number 2 colors :\n",color2)
 #intializing the web camera device
 out = cv2.VideoWriter('ssoccer_out.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (640,360))
 
-filename = 'soccer_small.mp4'
 cap = cv2.VideoCapture(filename)
 
 # Running the tensorflow session

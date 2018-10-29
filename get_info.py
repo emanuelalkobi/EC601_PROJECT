@@ -1,6 +1,9 @@
+from os import access, R_OK
+from os.path import isfile
 
-
-
+def get_video_file(filename):
+    assert isfile(filename) and access(filename, R_OK),"File {} doesn't exist or isn't readable".format(filename)
+    return(filename)
 def get_name(i):
     team_name = input('Choose team number'+str(i)+' name :\n ')
     return team_name
