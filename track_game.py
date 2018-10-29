@@ -6,15 +6,18 @@ import sys
 import tarfile
 import tensorflow as tf
 import zipfile
-
 from collections import defaultdict
 from io import StringIO
 from PIL import Image
 import cv2
-
 from object_detection.utils import label_map_util
 from object_detection.utils import visualization_utils as vis_util
 CWD_PATH = os.getcwd()
+
+import detect_color as detect_color
+import get_info as get_info
+#colors to detect as shirts supported
+colors=['red','yellow','green','blue']
 
 NUM_CLASSES=90
 # This is needed since the notebook is stored in the object_detection folder.
@@ -26,7 +29,7 @@ MODEL_NAME = 'ssd_mobilenet_v1_coco_11_06_2017'
 PATH_TO_CKPT = os.path.join(CWD_PATH, 'object_detection', MODEL_NAME, 'frozen_inference_graph.pb')
 # List of the strings that is used to add correct label for each box.
 PATH_TO_LABELS = os.path.join(CWD_PATH, 'object_detection', 'data', 'mscoco_label_map.pbtxt')
-print(PATH_TO_LABELS)
+
 
 detection_graph = tf.Graph()
 with detection_graph.as_default():
@@ -37,65 +40,20 @@ with detection_graph.as_default():
     tf.import_graph_def(od_graph_def, name='')
 
 label_map = label_map_util.load_labelmap(PATH_TO_LABELS)
-print("label map----------")
-print(label_map)
-print("-----------------------------------------")
 categories = label_map_util.convert_label_map_to_categories(label_map, max_num_classes=NUM_CLASSES, use_display_name=True)
-print("categories----------")
-print(categories)
-print("-------------------------------------------")
 
 category_index = label_map_util.create_category_index(categories)
-print("category index----------")
-print(category_index)
-print("---------------")
 
-def count_nonblack_np(img):
-    """Return the number of pixels in img that are not black.
-    img must be a Numpy array with colour values along the last axis.
-
-    """
-    return img.any(axis=-1).sum()
-
-
-
-def detect_team(image, show = False):
-    # define the list of boundaries
-    boundaries = [
-    ([17, 15, 100], [50, 56, 200]), #red
-    ([25, 146, 190], [96, 174, 250]) #yellow
-    ]
-    i = 0
-    for (lower, upper) in boundaries:
-        # create NumPy arrays from the boundaries
-        lower = np.array(lower, dtype = "uint8")
-        upper = np.array(upper, dtype = "uint8")
-
-        # find the colors within the specified boundaries and apply
-        # the mask
-        mask = cv2.inRange(image, lower, upper)
-        output = cv2.bitwise_and(image, image, mask = mask)
-        tot_pix = count_nonblack_np(image)
-        color_pix = count_nonblack_np(output)
-        ratio = color_pix/tot_pix
-#         print("ratio is:", ratio)
-        if ratio > 0.01 and i == 0:
-            return 'red'
-        elif ratio > 0.01 and i == 1:
-            return 'yellow'
-
-        i += 1
-
-        if show == True:
-            cv2.imshow("images", np.hstack([image, output]))
-            #cv2.waitKey(100000)
-            #cv2.destroyAllWindows()
-    return 'not_sure'
-
-
-
-
-
+#get teams names and colors
+team1=get_info.get_name(1)
+color1=get_info.get_color(1,colors)
+team2=get_info.get_name(2)
+color2=get_info.get_color(2,colors)
+print("Teams information\n")
+print("Team number 1 name :\n",team1)
+print("Team number 1 colors :\n",color1)
+print("Team number 2 name :\n",team2)
+print("Team number 2 colors :\n",color2)
 
 #intializing the web camera device
 out = cv2.VideoWriter('ssoccer_out.avi',cv2.VideoWriter_fourcc('M','J','P','G'), 10, (640,360))
@@ -107,8 +65,9 @@ cap = cv2.VideoCapture(filename)
 with detection_graph.as_default():
   with tf.Session(graph=detection_graph) as sess:
    counter = 0
+   print("--------------------------Start tracking video--------------------------\n")
    while (True):
-    
+   
       ret, image_np = cap.read()
       counter += 1
       if ret:
@@ -136,7 +95,6 @@ with detection_graph.as_default():
           for i, x in np.ndenumerate(classes):
               if (x!=1 and x!=37):    #classe 1 person class 37 sports ball
                   class_to_delete.append(i[1])
-          print(class_to_delete)
           classes=np.delete(classes,class_to_delete,1)
           scores=np.delete(scores,class_to_delete,1)
           boxes=np.delete(boxes,class_to_delete,1)
@@ -169,15 +127,14 @@ with detection_graph.as_default():
                 if label == 'person':
                     #crop them
                     crop_img = image_np[ymin:ymax, xmin:xmax]
-                    color = detect_team(crop_img)
+                    color = detect_color.detect_team(crop_img,color1,color2)
                     if color != 'not_sure':
                         coords = (xmin, ymin)
-                        if color == 'red':
-                             loc[coords] = 'PERU'
-                        else:
-                            loc[coords] = 'AUS'
+                        if color == color1:
+                             loc[coords] = team1
+                        elif color==color2:
+                            loc[coords] = team2
                 if label == 'sports ball':
-                    print("find_sports ball")
                     coords = (xmin, ymin)
                     loc[coords] = 'Soccer Ball'
         ## print color next to the person
@@ -192,5 +149,6 @@ with detection_graph.as_default():
           cv2.destroyAllWindows()
           cap.release()
           break
-print("realease")
 out.release()
+
+
