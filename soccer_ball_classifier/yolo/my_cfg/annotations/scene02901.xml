@@ -1,0 +1,38 @@
+<annotation>
+	<folder>captures_vlc</folder>
+	<filename>scene02901.png</filename>
+	<path>/Users/chansungpark/Documents/captures_vlc/scene02901.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1090</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>goal post</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>389</xmin>
+			<ymin>193</ymin>
+			<xmax>732</xmax>
+			<ymax>372</ymax>
+		</bndbox>
+	</object>
+	<object>
+		<name>ball</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1017</xmin>
+			<ymin>452</ymin>
+			<xmax>1038</xmax>
+			<ymax>477</ymax>
+		</bndbox>
+	</object>
+</annotation>
