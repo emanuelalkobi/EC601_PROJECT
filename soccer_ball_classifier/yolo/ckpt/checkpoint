@@ -1,5 +1,0 @@
-model_checkpoint_path: "yolo_custom-1000"
-all_model_checkpoint_paths: "yolo_custom-250"
-all_model_checkpoint_paths: "yolo_custom-500"
-all_model_checkpoint_paths: "yolo_custom-750"
-all_model_checkpoint_paths: "yolo_custom-1000"
