@@ -20,8 +20,9 @@ from PIL import Image
  
 #if tf.__version__ < '1.4.0':
   #raise ImportError('Please upgrade your tensorflow installation to v1.4.* or later!')
-  
-os.chdir('/Users/songxiaopai/models/research/object_detection')
+ 
+# add path to your models/research/object_detection
+os.chdir('')
   
   
 #Env setup 
@@ -32,15 +33,10 @@ os.chdir('/Users/songxiaopai/models/research/object_detection')
 sys.path.append("..")
  
  
- 
- 
 #Object detection imports
 from utils import label_map_util
  
 from utils import visualization_utils as vis_util
- 
- 
- 
  
 #Model preparation
 # What model to download.
