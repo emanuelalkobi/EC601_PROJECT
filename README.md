@@ -67,3 +67,16 @@ This classifier use the ssd_inception algorith to detect soccer ball in images.
      2. Open frozen_inference_graph_split folder, type "cat pb* > pb.zip" and then extract it. Unzip the data.rar as well.
      3. Add your path to the soccerball_image_test.py. Row #25,#45,#54 should be modified to your own path, and row #100,#107 to both input and output path of images you want to detect.
      4. The output of this algorithms is a new image which is stored in your own output path. (row #107)
+
+The structure of folders and files is as follows.
+
+     models/research/object_detection/
+     
+          --soccer_image_test.py
+          --soccerball_detection
+               --frozen_inference_graph.pb
+          --data
+               --.csv / .record / label_map.pbtxt
+          --training
+               --ssd_inception_v2.config
+          
