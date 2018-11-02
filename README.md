@@ -57,3 +57,8 @@ At soccer ball classifier there are 3 different classifiers for detecting a socc
       
       based on:
       https://towardsdatascience.com/yolov2-to-detect-your-own-objects-soccer-ball-using-darkflow-a4f98d5ce5bf
+      
+
+#yolo
+
+This classifier was also trained with yolo and darkflow, but with images of FIFA video games. Detailed instructions can be found inside the directory.
