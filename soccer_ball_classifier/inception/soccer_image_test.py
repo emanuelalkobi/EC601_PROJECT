@@ -45,26 +45,25 @@ from utils import visualization_utils as vis_util
 #Model preparation
 # What model to download.
  
-#这是我们刚才训练的模型
+#this is the model we have trained
 MODEL_NAME = '/Users/songxiaopai/models/research/object_detection/soccerball_detection'
  
  
  
-#对应的Frozen model位置
+#location of Frozen model
 # Path to frozen detection graph. This is the actual model that is used for the object detection.
 PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
  
 # List of the strings that is used to add correct label for each box.
 PATH_TO_LABELS = os.path.join('/Users/songxiaopai/models/research/object_detection/data', 'label_map.pbtxt')
  
-#改成自己例子中的类别数，2
+#number of classes
 NUM_CLASSES = 1
  
  
  
 '''
 #Download Model
-自己的模型，不需要下载了
 opener = urllib.request.URLopener()
 opener.retrieve(DOWNLOAD_BASE + MODEL_FILE, MODEL_FILE)
 tar_file = tarfile.open(MODEL_FILE)
@@ -101,15 +100,15 @@ def load_image_into_numpy_array(image):
 #Detection
  
 # If you want to test the code with your images, just add path to the images to the TEST_IMAGE_PATHS.
-#测试图片位置
-PATH_TO_TEST_IMAGES_DIR = '/Users/songxiaopai/ballimg'
+# test your image
+PATH_TO_TEST_IMAGES_DIR = ''
 os.chdir(PATH_TO_TEST_IMAGES_DIR)
 TEST_IMAGE_PATHS = os.listdir(PATH_TO_TEST_IMAGES_DIR)
  
 # Size, in inches, of the output images.
 IMAGE_SIZE = (12, 8)
- 
-output_path = ('/Users/songxiaopai/models/research/object_detection/soccerball_detection/test_images')
+# add path to output images
+output_path = ('')
  
  
 with detection_graph.as_default():
@@ -146,7 +145,7 @@ with detection_graph.as_default():
       #plt.figure(figsize=IMAGE_SIZE)
       #plt.imshow(image_np)
       #plt.show()
-      #保存文件
+      #save the images
       cv2.imwrite(output_path+image_path.split('\\')[-1],image_np)
       
 end =  time.time()
