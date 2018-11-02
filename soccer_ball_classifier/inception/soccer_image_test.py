@@ -22,7 +22,7 @@ from PIL import Image
   #raise ImportError('Please upgrade your tensorflow installation to v1.4.* or later!')
  
 # add path to your models/research/object_detection
-os.chdir('')
+os.chdir('../models/research/object_detection')
   
   
 #Env setup 
@@ -42,7 +42,7 @@ from utils import visualization_utils as vis_util
 # What model to download.
  
 #this is the model we have trained
-MODEL_NAME = '/Users/songxiaopai/models/research/object_detection/soccerball_detection'
+MODEL_NAME = '../models/research/object_detection/soccerball_detection'
  
  
  
@@ -51,7 +51,7 @@ MODEL_NAME = '/Users/songxiaopai/models/research/object_detection/soccerball_det
 PATH_TO_CKPT = MODEL_NAME + '/frozen_inference_graph.pb'
  
 # List of the strings that is used to add correct label for each box.
-PATH_TO_LABELS = os.path.join('/Users/songxiaopai/models/research/object_detection/data', 'label_map.pbtxt')
+PATH_TO_LABELS = os.path.join('../models/research/object_detection/data', 'label_map.pbtxt')
  
 #number of classes
 NUM_CLASSES = 1
