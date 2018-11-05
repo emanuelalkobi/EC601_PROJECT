@@ -30,6 +30,10 @@ PATH_TO_CKPT = os.path.join(CWD_PATH, 'object_detection', MODEL_NAME, 'frozen_in
 # List of the strings that is used to add correct label for each box.
 PATH_TO_LABELS = os.path.join(CWD_PATH, 'object_detection', 'data', 'mscoco_label_map.pbtxt')
 
+#check argument number
+if ((len(sys.argv) < 2)):
+    print("Did not receive a video file to analyze")
+    sys.exit(0)
 
 #check if vide to analyze exsist
 filename= get_info.get_video_file(sys.argv[1])
