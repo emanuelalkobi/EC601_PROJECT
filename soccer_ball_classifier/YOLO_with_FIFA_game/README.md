@@ -4,7 +4,7 @@ The source video can be found in my google drive:
 
     https://drive.google.com/open?id=1arG0N1wlVeXdQNVQTlmBKuA3zPbNTRqA
   
-screen_shots.py is for making screen shots of the video for training. I manually deleted the images which contains no soccer ball labeled the soccer balls with LabelImg. The images and annotations can be found in 'screen_shots_ready'
+screen_shots.py is for making screen shots of the video for training. I manually deleted the images which contains no soccer ball labeled the soccer balls with LabelImg. The images and annotations can be found in'screen_shots_ready' in the google drive
 
 Then I trained the model with YOLO and darkflow by following this tutorial:
 
