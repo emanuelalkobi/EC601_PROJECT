@@ -25,7 +25,7 @@ NUM_CLASSES=90
 #classe 1 person class 37 sports ball
 PERSON=1
 SPORTS_BALL=37
-THRESHOLD=0.60
+THRESHOLD=0.40
 TEAM_1=1
 TEAM_2=2
 # This is needed since the notebook is stored in the object_detection folder.
@@ -168,12 +168,14 @@ def main():
                         #crop them
                         crop_img = image_np[ymin:ymax, xmin:xmax]
                         color = detect_color.detect_team(crop_img,color1,color2)
-                        if color != 'not_sure':
-                            coords = (xmin, ymin)
-                            if color == color1:
-                                 loc[coords] = team1
-                            elif color==color2:
-                                loc[coords] = team2
+                        #if color != 'not_sure':
+                        coords = (xmin, ymin)
+                        if color == color1:
+                            loc[coords] = team1
+                        elif color==color2:
+                            loc[coords] = team2
+                        else:
+                            loc[coords]='UNKNOWN TEAM'
                     if label == 'sports ball':
                         coords = (xmin, ymin)
                         loc[coords] = 'Soccer Ball'
