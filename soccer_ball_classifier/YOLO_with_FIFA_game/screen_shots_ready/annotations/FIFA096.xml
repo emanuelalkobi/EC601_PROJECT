@@ -1,0 +1,26 @@
+<annotation>
+	<folder>screen_shots_ready</folder>
+	<filename>FIFA096.jpg</filename>
+	<path>C:\Users\Sean\Desktop\screen_shots_ready\FIFA096.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1200</width>
+		<height>800</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>ball</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>866</xmin>
+			<ymin>280</ymin>
+			<xmax>889</xmax>
+			<ymax>303</ymax>
+		</bndbox>
+	</object>
+</annotation>
