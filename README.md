@@ -68,8 +68,7 @@ This classifier was also trained with yolo and darkflow, but with images of FIFA
 
 This classifier use the ssd_inception algorithm to detect soccer ball in images.
 
-     1. Open 'soccer_ball_classifier/inception/frozen_inference_graph_split' folder, type "cat pb* > pb.zip" and then extract it.
-     2. Put the images you want to test into 'testimg' folder.
-     3. Run 'inception_test.py'.
-     4. The output of this algorithms is stored in 'testresult' folder.
+     1. Put the images you want to test into 'testimg' folder.
+     2. Run 'inception_test.py'.
+     3. The output of this algorithms is stored in 'testresult' folder.
           
