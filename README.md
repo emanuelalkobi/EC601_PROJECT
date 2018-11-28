@@ -71,4 +71,9 @@ This classifier use the ssd_inception algorithm to detect soccer ball in images.
      1. Put the images you want to test into 'testimg' folder.
      2. Run 'inception_test.py'.
      3. The output of this algorithms is stored in 'testresult' folder.
-          
+
+
+------------------------------------------------------------------------------------------
+*Ball Detection*
+
+For Template Matching, type like this 'python EC601_PROJECT/track_game_TM.py -i EC601_PROJECT/fifa_videos/angle2.mp4 -o angle2_ball3.mp4 -t EC601_PROJECT/template/ball3.png' and then video would be created.        
