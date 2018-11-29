@@ -12,6 +12,13 @@ Target Customer:
 
      Soccer referees or football associations
      
+Running command:
+     
+     python3 track_game.py -i <input video> -o <result video>
+     
+     
+
+     
 
 ------------------------------------------------------------------------------------------
 Timeline
@@ -28,9 +35,9 @@ Sprint4(11/11 - 12/13): Combine the whole code together and track all the necess
 ------------------------------------------------------------------------------------------
 *Game Detection*
 
-track_game.py is the main file and his aim is to detect the players and the soccer ball.
+Track_game.py is the main file and his aim is to detect the players and the soccer ball.
 
-for detecting the players we used the SSD_mobilenet_COCO. It is based on a similar project:
+For detecting the players we used the SSD_mobilenet_COCO. It is based on a similar project:
 
             https://towardsdatascience.com/analyse-a-soccer-game-using-tensorflow-object-detection-and-opencv-e321c230e8f2
             
@@ -43,17 +50,15 @@ In order to detect the soccer ball that it is a harder task we use the next 3 me
 
 3.Motion tracking
 
-The motion tracking algorith is based on the next project with modifications to detect a soccer ball:
-
-          https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
-
-
-Type the following to run it:
+     The motion tracking algorith is based on the next project with modifications to detect a soccer ball:
      
-     python3 track_game.py -i <input video> -o <result video>
+               https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
+
+
 
 
 ------------------------------------------------------------------------------------------
+
 At soccer ball classifier there are 3 different classifiers for detecting a soccer ball.
 
 This classifiers are for studying purpose only.
