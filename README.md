@@ -12,6 +12,13 @@ Target Customer:
 
      Soccer referees or football associations
      
+Running command:
+     
+     python3 track_game.py -i <input video> -o <result video>
+     
+     
+
+     
 
 ------------------------------------------------------------------------------------------
 Timeline
@@ -26,21 +33,35 @@ Sprint4(11/11 - 12/13): Combine the whole code together and track all the necess
 
 
 ------------------------------------------------------------------------------------------
-*Player Detection*
+*Game Detection*
 
-track_game.py is for detecting the players. It is based on a similar project:
+Track_game.py is the main file and his aim is to detect the players and the soccer ball.
+
+For detecting the players we used the SSD_mobilenet_COCO. It is based on a similar project:
 
             https://towardsdatascience.com/analyse-a-soccer-game-using-tensorflow-object-detection-and-opencv-e321c230e8f2
             
-The "SSD_mobilenet_COCO" model is used, which is in the object_detection object.
-Type the following to run it:
-     
-     python3 track_game.py
 
-It will run with soccer_small.mp4
+In order to detect the soccer ball that it is a harder task we use the next 3 methods in this order(this means that when the a method failed to detect the soccer ball we are trying to detect it using the next method):
+
+1.SSD_mobilenet_COCO model
+
+2.Templeta matching 
+
+3.Motion tracking
+
+     The motion tracking algorith is based on the next project with modifications to detect a soccer ball:
+     
+               https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
+
+
+
 
 ------------------------------------------------------------------------------------------
+
 At soccer ball classifier there are 3 different classifiers for detecting a soccer ball.
+
+This classifiers are for studying purpose only.
 
 
  #yolo
@@ -68,8 +89,16 @@ This classifier was also trained with yolo and darkflow, but with images of FIFA
 
 This classifier use the ssd_inception algorithm to detect soccer ball in images.
 
-     1. Open 'soccer_ball_classifier/inception/frozen_inference_graph_split' folder, type "cat pb* > pb.zip" and then extract it.
-     2. Put the images you want to test into 'testimg' folder.
-     3. Run 'inception_test.py'.
-     4. The output of this algorithms is stored in 'testresult' folder.
-          
+     1. Put the images you want to test into 'testimg' folder.
+     2. Run 'inception_test.py'.
+     3. The output of this algorithms is stored in 'testresult' folder.
+
+
+------------------------------------------------------------------------------------------
+*Ball Detection*
+
+For Template Matching, type like this: 
+
+'python EC601_PROJECT/track_game_TM.py -i EC601_PROJECT/fifa_videos/angle2.mp4 -o angle2_ball3.mp4 -t EC601_PROJECT/template/ball3.png' 
+
+Then video would be created. To save time, angle2_ball3.mp4 has already been saved in ./EC601_PROJECT.         

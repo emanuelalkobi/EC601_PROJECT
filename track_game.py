@@ -124,6 +124,41 @@ class soccer_game:
 
         return image_np
 
+    def motion_tracking(self,image_np,square=True):
+        ballLower = (29, 86, 6)
+        ballUpper = (64, 255, 255)
+        blurred = cv2.GaussianBlur(image_np, (11, 11), 0)
+        hsv = cv2.cvtColor(blurred, cv2.COLOR_BGR2HSV)
+        mask = cv2.inRange(hsv, ballLower, ballUpper)
+        mask = cv2.erode(mask, None, iterations=2)
+        mask = cv2.dilate(mask, None, iterations=2)
+        # find contours in the mask and initialize the current
+        # (x, y) center of the ball
+        cnts = cv2.findContours(mask.copy(),cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE)
+        cnts = cnts[0] if imutils.is_cv2() else cnts[1]
+        center = None
+        # only proceed if at least one contour was found
+        if len(cnts) > 0:
+            # find the largest contour in the mask, then use
+            # it to compute the minimum enclosing circle and
+            # centroid
+            c = max(cnts, key=cv2.contourArea)
+            ((x, y), radius) = cv2.minEnclosingCircle(c)
+            M = cv2.moments(c)
+            cx = int(M['m10']/M['m00'])
+            cy = int(M['m01']/M['m00'])
+            center = (cx, cy)
+            # only proceed if the radius meets a minimum size
+            if radius > 10:
+                # draw the circle and centroid on the frame,
+                
+                if (square):
+                    cv2.rectangle(image_np, (cx-5, cy-5), (cx+5, cy+5), (0,0,255), 3)
+                else:
+                    cv2.circle(image_np, center, 5, (0, 0, 255), 3)
+
+        return image_np
+
 
 def main():
     #parse arguments
@@ -218,7 +253,7 @@ def main():
                   #need to insert TEMPLE MATCHING  BEFORE USING MOTION TRACKING!!!!!!!!
                   image_np=soccer_game_curr.template_matching(image_np)
                   image_np=soccer_game_curr.motion_tracking(image_np)
-              
+
               vis_util.visualize_boxes_and_labels_on_image_array(
                   image_np,
                   np.squeeze(boxes),
