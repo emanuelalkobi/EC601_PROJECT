@@ -46,7 +46,13 @@ In order to detect the soccer ball that it is a harder task we use the next 3 me
 
 1.SSD_mobilenet_COCO model
 
-2.Templeta matching 
+2.Template matching
+
+     The template matching algorithm is based on the link below:
+     https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html
+     
+     eg. 'python track_game.py -i fifa_videos/angle2.mp4 -o angle2_ball3.mp4 -t template/ball3.png'
+     To save time, angle2_ball3.mp4 has already been saved here.   
 
 3.Motion tracking
 
@@ -94,11 +100,4 @@ This classifier use the ssd_inception algorithm to detect soccer ball in images.
      3. The output of this algorithms is stored in 'testresult' folder.
 
 
-------------------------------------------------------------------------------------------
-*Ball Detection*
-
-For Template Matching, type like this: 
-
-'python EC601_PROJECT/track_game_TM.py -i EC601_PROJECT/fifa_videos/angle2.mp4 -o angle2_ball3.mp4 -t EC601_PROJECT/template/ball3.png' 
-
-Then video would be created. To save time, angle2_ball3.mp4 has already been saved in ./EC601_PROJECT.         
+      
