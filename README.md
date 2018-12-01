@@ -14,7 +14,7 @@ Target Customer:
      
 Running command:
      
-     python3 track_game.py -i <input video> -o <result video>
+     python3 track_game.py -i <input video> -o <result video> -t <template image>
      
      
 
