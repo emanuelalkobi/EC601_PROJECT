@@ -69,14 +69,8 @@ class soccer_game:
         out = cv2.VideoWriter(output_name,fourcc, fps, (width,height))
         return cap,out
     
-    def template_matching(self,image_np):
-        #parse arguments
-        parser=argparse.ArgumentParser()
-        parser.add_argument('-i','--input',required=True)
-        parser.add_argument('-o','--output',required=True)
-        parser.add_argument('-t','--template',required=False)
-        args = parser.parse_args()
-        template=cv2.imread(args.template)
+    def template_matching(self,image_np,template):
+        template=cv2.imread(template)
         cv2.namedWindow('template image', cv2.WINDOW_NORMAL)
         cv2.imshow("template image", template)
         method = cv2.TM_CCOEFF
@@ -84,10 +78,17 @@ class soccer_game:
         th, tw = template.shape[:2]
         result = cv2.matchTemplate(image_np, template, method)
         min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
-        tl = max_loc
-        br = (tl[0]+tw, tl[1]+th)   #br is the bottem right corner of box
-        cv2.rectangle(image_np, tl, br, (0, 0, 255), 2)
-        return image_np
+        print(max_val)
+        print(min_val)
+        if max_val < 2400000:
+            tl = None
+            return image_np,tl
+        else:
+            tl = max_loc
+            br = (tl[0]+tw, tl[1]+th)   #br is the bottem right corner of box
+            cv2.rectangle(image_np, tl, br, (0, 0, 255), 2)
+            return image_np,tl
+
     
     def motion_tracking(self,image_np,square=True):
         ballLower = (29, 86, 6)
@@ -130,7 +131,7 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('-i','--input',required=True)
     parser.add_argument('-o','--output',required=True)
-    parser.add_argument('-t','--template',required=False)
+    parser.add_argument('-t','--template',required=True)
     args = parser.parse_args()
     
     #get teams names and colors
@@ -215,9 +216,10 @@ def main():
               
               if (soccer_ball_scores_over_threshold[0].shape[0]==0):
                   #a soccer ball was not found and the model will not  show it
-                  #need to insert TEMPLE MATCHING  BEFORE USING MOTION TRACKING!!!!!!!!
-                  image_np=soccer_game_curr.template_matching(image_np)
-                  image_np=soccer_game_curr.motion_tracking(image_np)
+                  #need to insert TEMPLE MATCHING BEFORE USING MOTION TRACKING!!!!!!!!
+                  image_np,tl=soccer_game_curr.template_matching(image_np,args.template)
+                  if tl is None:
+                      image_np=soccer_game_curr.motion_tracking(image_np)
 
               vis_util.visualize_boxes_and_labels_on_image_array(
                   image_np,
