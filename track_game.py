@@ -78,8 +78,6 @@ class soccer_game:
         th, tw = template.shape[:2]
         result = cv2.matchTemplate(image_np, template, method)
         min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
-        print(max_val)
-        print(min_val)
         if max_val < 2400000:
             tl = None
             return image_np,tl
