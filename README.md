@@ -95,4 +95,4 @@ This classifier use the ssd_inception algorithm to detect soccer ball in images.
      3. The output of this algorithms is stored in 'testresult' folder.
 
 
-      
+      <img src="/images/Screen Shot 2018-12-03 at 10.40.02.png" alt="My cool logo"/>
