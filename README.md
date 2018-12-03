@@ -24,7 +24,7 @@ Running command:
 Track_game.py is the python file that track the soccer game :
 
 * Detecting players:
-
+------------------------------------------------------------------------------------------------------------------------------
 For detecting the players we used Tensorflow Object Detection API.We used the pre trained model over the COCO dataset.
 COCO data set is a large-scale object detection dataset. 
 
@@ -50,8 +50,7 @@ Our code is based on the next website:
     
     
 * Detecting soccer ball:
-    
-
+------------------------------------------------------------------------------------------------------------------------------
 In order to detect the soccer ball that it is a harder task we use the next 2 methods in this order(this means that when the a method failed to detect the soccer ball we are trying to detect it using the next method):
 
 1.SSD_mobilenet_COCO model
