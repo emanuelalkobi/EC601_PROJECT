@@ -37,10 +37,12 @@ COCO data set is a large-scale object detection dataset.
      - Object segmentation
      - 91 stuff categories
      
+*    In our project we care about 2 classes only :
+     - person
+     - sports ball
+     
 
-In our project we care about 2 classes only :
-     -person
-     -sports ball.
+
 
 Our code is based on the next website:
 
