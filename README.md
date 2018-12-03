@@ -60,6 +60,7 @@ The template matching algorithm is based on the link below:
                https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
 
 track_game.py combines the result of these 3 methods for detecting the soccer ball.
+
 ![gif](https://github.com/emanuelalkobi/EC601_PROJECT/blob/master/results/gif.gif)
 
 ------------------------------------------------------------------------------------------
