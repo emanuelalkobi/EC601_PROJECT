@@ -46,6 +46,10 @@ COCO data set is a large-scale object detection dataset.
      
 <img src="/images/1.png" width="180" height="200" style="width:80%">  <img src="/images/2.png" width="180" height="200" style="width:80%"> <img src="/images/3.png"  width="180" height="200" style="width:80%"> <img src="/images/4.png"  width="180" height="200" style="width:80%">
 
+<img src="/images/5.png" width="180" height="200" style="width:80%">  <img src="/images/6.png" width="180" height="200" style="width:80%"> <img src="/images/7.png"  width="180" height="200" style="width:80%"> <img src="/images/8.png"  width="180" height="200" style="width:80%">
+
+<img src="/images/9.png" width="180" height="200" style="width:80%">  <img src="/images/10.png" width="180" height="200" style="width:80%"> <img src="/images/11.png"  width="180" height="200" style="width:80%"> <img src="/images/12.png"  width="180" height="200" style="width:80%">
+
 
 
 Our code is based on the next website:
@@ -61,7 +65,7 @@ In order to detect the soccer ball that it is a harder task we use the next 2 me
 
 *    Examples :
      
-<img src="/images/b2.png" width="180" height="200" style="width:80%">  <img src="/images/b3.png" width="180" height="200" style="width:80%">
+<img src="/images/b2.png" width="180" height="200" style="width:80%">  <img src="/images/b3.png" width="180" height="200" style="width:80%"> <img src="/images/b6.png" width="180" height="200" style="width:80%">
 
 2.Motion tracking
 
@@ -71,7 +75,7 @@ The motion tracking algorith is based on the next project with modifications to 
      
 *    Examples :
      
-<img src="/images/b1.png" width="180" height="200" style="width:80%">  <img src="/images/b4.png" width="180" height="200" style="width:80%">
+<img src="/images/b1.png" width="180" height="200" style="width:80%">  <img src="/images/b4.png" width="180" height="200" style="width:80%"> <img src="/images/b5.png" width="180" height="200" style="width:80%">
      
 
 track_game.py combines the result of these 2 methods for detecting the soccer ball.
