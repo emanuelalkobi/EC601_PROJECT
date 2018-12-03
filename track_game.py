@@ -209,10 +209,7 @@ def main():
                     soccer_ball_scores_over_threshold=np.where(soccer_ball_scores>THRESHOLD)
                     if (soccer_ball_scores_over_threshold[0].shape[0]==0):
                         #a soccer ball was not found and the model will not  show it
-                        #need to insert TEMPLE MATCHING BEFORE USING MOTION TRACKING!!!!!!!!
-                        image_np,tl=soccer_game_curr.template_matching(image_np,args.template)
-                        if tl is None:
-                            image_np=soccer_game_curr.motion_tracking(image_np)
+                        image_np=soccer_game_curr.motion_tracking(image_np)
 
                     vis_util.visualize_boxes_and_labels_on_image_array(
                         image_np,
