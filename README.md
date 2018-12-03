@@ -27,17 +27,16 @@ Track_game.py is the python file that track the soccer game :
 
 For detecting the players we used Tensorflow Object Detection API.We used the pre trained model over the COCO dataset.
 COCO data set is a large-scale object detection dataset. 
-COCO has several features:
 
-     -Object segmentation
-     -Recognition in context
-     -Superpixel stuff segmentation
-     -330K images (>200K labeled)
-     -1.5 million object instances
-     -80 object categories
-     -91 stuff categories
-     -5 captions per image
-
+*    COCO data set properties :
+     - Object segmentation
+     - Recognition in context
+     - 330K images (>200K labeled)
+     - 1.5 million object instances
+     - 80 object categories
+     - Object segmentation
+     - 91 stuff categories
+     
 
 In our project we care about 2 classes only :
      -person
