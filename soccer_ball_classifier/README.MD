@@ -2,7 +2,7 @@
 
 We also tried 3 other machine learning methods to detect the ball. The results were staisfying since the ball is too small and blurry. We didn't end up using any of the models, but we still put them in this repo for studying purpose.
 
- #yolo
+ # yolo
 
  This classifier use the yolo and darkflow algorith in order to detect items in a image.
  We train it in order to detect soccer balls at images and videos.
@@ -18,12 +18,12 @@ We also tried 3 other machine learning methods to detect the ball. The results w
       https://towardsdatascience.com/yolov2-to-detect-your-own-objects-soccer-ball-using-darkflow-a4f98d5ce5bf
       
 
-#yolo with FIFA game
+# yolo with FIFA game
 
 This classifier was also trained with yolo and darkflow, but with images of FIFA video games. Detailed instructions can be found inside the directory.
 
 
-#inception
+# inception
 
 This classifier use the ssd_inception algorithm to detect soccer ball in images.
 
