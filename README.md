@@ -1,5 +1,5 @@
-# EC601_PROJECT
-Soccer Offside Detection
+# *EC601_PROJECT-Soccer Offside Detection*
+
 Product Name: 
 
      Soccer Offside Detection System
@@ -14,25 +14,11 @@ Target Customer:
      
 Running command:
      
-     python3 track_game.py -i <input video> -o <result video> -t <template image>
+     python3 track_game.py -i <input video> -o <result video> 
      
      
 
-     
 
-------------------------------------------------------------------------------------------
-Timeline
-
-Sprint1(9/10 - 9/26): Established our mission and user stories
-
-Sprint2(9/26 - 10/06): Applied a model to track the players
-
-Sprint3(10/07 - 11/10): To build a model for tracking soccer ball
-
-Sprint4(11/11 - 12/13): Combine the whole code together and track all the necessary parts.write the algorith to detect the offside based on the detections.
-
-
-------------------------------------------------------------------------------------------
 *Game Detection*
 
 Track_game.py is the current result:
