@@ -41,6 +41,10 @@ COCO data set is a large-scale object detection dataset.
      - person
      - sports ball
      
+     
+*    Examples :
+     
+<img src="/images/1.png" width="180" height="200" style="width:80%">  <img src="/images/2.png" width="180" height="200" style="width:80%"> <img src="/images/3.png"  width="180" height="200" style="width:80%">
 
 
 
@@ -71,7 +75,7 @@ The template matching algorithm is based on the link below:
      
      https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html
      
-     'python3 track_game.py -i <input video> -o <result video> -t template/ball3.png'
+     eg. 'python track_game.py -i fifa_videos/angle2.mp4 -o angle2_ball3.mp4 -t template/ball3.png'
 
 ![gif](https://github.com/emanuelalkobi/EC601_PROJECT/blob/master/results/gif.gif)
 
