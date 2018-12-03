@@ -35,7 +35,7 @@ Sprint4(11/11 - 12/13): Combine the whole code together and track all the necess
 ------------------------------------------------------------------------------------------
 *Game Detection*
 
-Track_game.py is the main file and his aim is to detect the players and the soccer ball.
+Track_game.py is the current result:
 
 For detecting the players we used the SSD_mobilenet_COCO. It is based on a similar project:
 
@@ -47,8 +47,8 @@ In order to detect the soccer ball that it is a harder task we use the next 3 me
 1.SSD_mobilenet_COCO model
 
 2.Template matching
-
-     The template matching algorithm is based on the link below:
+The template matching algorithm is based on the link below:
+     
      https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html
      
      eg. 'python track_game.py -i fifa_videos/angle2.mp4 -o angle2_ball3.mp4 -t template/ball3.png'
@@ -59,15 +59,11 @@ In order to detect the soccer ball that it is a harder task we use the next 3 me
      
                https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
 
-
-
+track_game.py combines the result of these 3 methods for detecting the soccer ball.
 
 ------------------------------------------------------------------------------------------
 
-At soccer ball classifier there are 3 different classifiers for detecting a soccer ball.
-
-This classifiers are for studying purpose only.
-
+We also tried 3 other machine learning methods to detect the ball. The results were staisfying since the ball is too small and blurry. We didn't end up using any of the models, but we still put them in this repo for studying purpose.
 
  #yolo
 
