@@ -1,5 +1,5 @@
-# EC601_PROJECT
-Soccer Offside Detection
+# *EC601_PROJECT-Soccer Offside Detection*
+
 Product Name: 
 
      Soccer Offside Detection System
@@ -14,85 +14,68 @@ Target Customer:
      
 Running command:
      
-     python3 track_game.py -i <input video> -o <result video> -t <template image>
+     python3 track_game.py -i <input video> -o <result video> 
      
      
 
+
+## Game Detection
+
+Track_game.py is the python file that track the soccer game :
+
+* Detecting players:
+------------------------------------------------------------------------------------------------------------------------------
+For detecting the players we used Tensorflow Object Detection API.We used the pre trained model over the COCO dataset.
+COCO data set is a large-scale object detection dataset. 
+
+*    COCO data set properties :
+     - Object segmentation
+     - Recognition in context
+     - 330K images (>200K labeled)
+     - 1.5 million object instances
+     - 80 object categories
+     - Object segmentation
+     - 91 stuff categories
      
-
-------------------------------------------------------------------------------------------
-Timeline
-
-Sprint1(9/10 - 9/26): Established our mission and user stories
-
-Sprint2(9/26 - 10/06): Applied a model to track the players
-
-Sprint3(10/07 - 11/10): To build a model for tracking soccer ball
-
-Sprint4(11/11 - 12/13): Combine the whole code together and track all the necessary parts.write the algorith to detect the offside based on the detections.
+*    In our project we care about 2 classes only :
+     - person
+     - sports ball
+     
+     
+*    Examples :
+     
+<img src="/images/1.png" width="180" height="200" style="width:80%">  <img src="/images/2.png" width="180" height="200" style="width:80%"> <img src="/images/3.png"  width="180" height="200" style="width:80%"> <img src="/images/4.png"  width="180" height="200" style="width:80%">
 
 
-------------------------------------------------------------------------------------------
-*Game Detection*
 
-Track_game.py is the current result:
-
-For detecting the players we used the SSD_mobilenet_COCO. It is based on a similar project:
+Our code is based on the next website:
 
             https://towardsdatascience.com/analyse-a-soccer-game-using-tensorflow-object-detection-and-opencv-e321c230e8f2
-            
-
-In order to detect the soccer ball that it is a harder task we use the next 3 methods in this order(this means that when the a method failed to detect the soccer ball we are trying to detect it using the next method):
+    
+    
+* Detecting soccer ball:
+------------------------------------------------------------------------------------------------------------------------------
+In order to detect the soccer ball that it is a harder task we use the next 2 methods in this order(this means that when the a method failed to detect the soccer ball we are trying to detect it using the next method):
 
 1.SSD_mobilenet_COCO model
 
-2.Template matching
+
+
+2.Motion tracking
+
+The motion tracking algorith is based on the next project with modifications to detect a soccer ball:
+     
+     https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
+     
+
+track_game.py combines the result of these 2 methods for detecting the soccer ball.
+
+We implemented a Template matching algorithm too but we remove it as we did not get better results with this algoritm.
 The template matching algorithm is based on the link below:
      
      https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html
      
      eg. 'python track_game.py -i fifa_videos/angle2.mp4 -o angle2_ball3.mp4 -t template/ball3.png'
 
-3.Motion tracking
+![gif](https://github.com/emanuelalkobi/EC601_PROJECT/blob/master/results/gif.gif)
 
-     The motion tracking algorith is based on the next project with modifications to detect a soccer ball:
-     
-               https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
-
-track_game.py combines the result of these 3 methods for detecting the soccer ball.
-
-------------------------------------------------------------------------------------------
-
-We also tried 3 other machine learning methods to detect the ball. The results were staisfying since the ball is too small and blurry. We didn't end up using any of the models, but we still put them in this repo for studying purpose.
-
- #yolo
-
- This classifier use the yolo and darkflow algorith in order to detect items in a image.
- We train it in order to detect soccer balls at images and videos.
- there are 2 files:
-
-      1.track_image.py <image path>
-      2.track_video.py <video path>
-      
-      the output of both algorithms is a new video/image with a result after their name with the output of the algorithm
-      need to run the python script from the sub folder soccer_ball_classifier/yolo/
-      
-      based on:
-      https://towardsdatascience.com/yolov2-to-detect-your-own-objects-soccer-ball-using-darkflow-a4f98d5ce5bf
-      
-
-#yolo with FIFA game
-
-This classifier was also trained with yolo and darkflow, but with images of FIFA video games. Detailed instructions can be found inside the directory.
-
-
-#inception
-
-This classifier use the ssd_inception algorithm to detect soccer ball in images.
-
-     1. Put the images you want to test into 'testimg' folder.
-     2. Run 'inception_test.py'.
-     3. The output of this algorithms is stored in 'testresult' folder.
-
-
-      <img src="/images/Screen Shot 2018-12-03 at 10.40.02.png" alt="My cool logo"/>
