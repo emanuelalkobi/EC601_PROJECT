@@ -52,7 +52,6 @@ In order to detect the soccer ball that it is a harder task we use the next 3 me
      https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html
      
      eg. 'python track_game.py -i fifa_videos/angle2.mp4 -o angle2_ball3.mp4 -t template/ball3.png'
-     To save time, angle2_ball3.mp4 has already been saved here.   
 
 3.Motion tracking
 
