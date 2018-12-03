@@ -57,15 +57,21 @@ Our code is based on the next website:
 ------------------------------------------------------------------------------------------------------------------------------
 In order to detect the soccer ball that it is a harder task we use the next 2 methods in this order(this means that when the a method failed to detect the soccer ball we are trying to detect it using the next method):
 
-1.SSD_mobilenet_COCO model
+1.SSD_mobilenet_COCO model(more details above)
 
-
+*    Examples :
+     
+<img src="/images/b2.png" width="180" height="200" style="width:80%">  <img src="/images/b3.png" width="180" height="200" style="width:80%">
 
 2.Motion tracking
 
 The motion tracking algorith is based on the next project with modifications to detect a soccer ball:
      
      https://www.pyimagesearch.com/2015/09/14/ball-tracking-with-opencv/
+     
+*    Examples :
+     
+<img src="/images/b1.png" width="180" height="200" style="width:80%">  <img src="/images/b4.png" width="180" height="200" style="width:80%">
      
 
 track_game.py combines the result of these 2 methods for detecting the soccer ball.
