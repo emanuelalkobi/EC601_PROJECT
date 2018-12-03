@@ -44,7 +44,7 @@ COCO data set is a large-scale object detection dataset.
      
 *    Examples :
      
-<img src="/images/1.png" width="180" height="200" style="width:80%">  <img src="/images/2.png" width="180" height="200" style="width:80%"> <img src="/images/3.png"  width="180" height="200" style="width:80%">
+<img src="/images/1.png" width="180" height="200" style="width:80%">  <img src="/images/2.png" width="180" height="200" style="width:80%"> <img src="/images/3.png"  width="180" height="200" style="width:80%"> <img src="/images/4.png"  width="180" height="200" style="width:80%">
 
 
 
