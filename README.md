@@ -85,5 +85,5 @@ The template matching algorithm is based on the link below:
      
      https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html
      
-![gif](https://github.com/emanuelalkobi/EC601_PROJECT/blob/master/results/gif.gif)
+![gif](https://github.com/emanuelalkobi/EC601_PROJECT/blob/master/gif.gif)
 
