@@ -5,8 +5,12 @@ def get_video_file(filename):
     assert isfile(filename) and access(filename, R_OK),"File {} doesn't exist or isn't readable".format(filename)
     return(filename)
 
-def get_name(i):
-    team_name = input('Choose team number'+str(i)+' name :\n ')
+def get_name1():
+    team_name = input('Name team number 1 (attacking towards up or left of the screen)\n')
+    return team_name
+
+def get_name2():
+    team_name = input('Name team number 2 (attacking towards down or right of the screen)\n')
     return team_name
 
 def get_color(i,colors):
@@ -27,4 +31,10 @@ def get_line_direction():
     line_dir = input('Please choose the offside line:1.horizontal 2.vertical 3.no line\n')
     line_dir = int(line_dir)
     return line_dir
+
+def get_game_direction():
+    game_direction = input('Please choose the game direction: 1.horizontal 2.vertical\n')
+    game_direction = int(game_direction)
+    return game_direction
+
 

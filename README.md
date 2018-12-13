@@ -85,7 +85,5 @@ The template matching algorithm is based on the link below:
      
      https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_template_matching/py_template_matching.html
      
-     eg. 'python track_game.py -i fifa_videos/angle2.mp4 -o angle2_ball3.mp4 -t template/ball3.png'
-
-![gif](https://github.com/emanuelalkobi/EC601_PROJECT/blob/master/results/gif.gif)
+![gif](https://github.com/emanuelalkobi/EC601_PROJECT/blob/master/gif.gif)
 

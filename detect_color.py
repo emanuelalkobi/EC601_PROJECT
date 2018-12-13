@@ -9,10 +9,12 @@ def count_nonblack_np(img):
 def detect_team(image,color1,colo2, show = False):
     # define the list of boundaries
     boundaries = [
-    ([17, 15, 100], [50, 56, 200]), #red
+    #([17, 15, 100], [50, 56, 200]), #red
+    ([17, 15, 100], [60, 60, 200]),  # red
     ([60, 160, 140], [115, 220, 210]), #yellow
     ([17, 90, 20], [100, 250, 100]), #green
-    ([90, 3, 1], [230, 70, 100]) #blue
+    #([90, 3, 1], [230, 70, 100]) #blue
+    ([135, 70, 60], [180, 105, 100])  # blue
     ]
 
     colors=['red','yellow','green','blue']
