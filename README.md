@@ -14,14 +14,14 @@ Target Customer:
      
 Running command:
      
-     python3 track_game.py -i <input video> -o <result video> 
+     python3 track_game_offside_detection.py -i <input video> -o <result video> 
      
      
 
 
 ## Game Detection
 
-Track_game.py is the python file that track the soccer game :
+Track_game_offside_detection.py is the python file that track the soccer game :
 
 * Detecting players:
 ------------------------------------------------------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ The motion tracking algorith is based on the next project with modifications to 
 <img src="/images/b1.png" width="180" height="200" style="width:80%">  <img src="/images/b4.png" width="180" height="200" style="width:80%"> <img src="/images/b5.png" width="180" height="200" style="width:80%">
      
 
-track_game.py combines the result of these 2 methods for detecting the soccer ball.
+track_game_offside_detection.py combines the result of these 2 methods for detecting the soccer ball.
 
 We implemented a Template matching algorithm too but we remove it as we did not get better results with this algoritm.
 The template matching algorithm is based on the link below:
